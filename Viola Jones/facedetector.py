@@ -2,14 +2,13 @@
 # facedetector.py
 #   A face detector using BoostedCascade.
 # 
-# Author : Donny
-# 
 
 import time
 import ctypes
 import multiprocessing as mp
 import numpy as np
 import scipy as sp
+import skimage
 from boostedcascade import BoostedCascade, HaarlikeFeature, HaarlikeType
 
 class FaceDetector:
@@ -77,7 +76,7 @@ class FaceDetector:
 
         si = max_size
         while True:
-            scaledimg = sp.misc.imresize(image, size=(int(si*height), int(si*width)), mode='F')
+            scaledimg = skimage.transform.resize(image, size=(int(si*height), int(si*width)), mode='F')
             integral_image = self.boostedCascade.translateToIntegralImage(scaledimg)
 
             data = __class__._transformToData(
