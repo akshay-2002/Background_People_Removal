@@ -1,6 +1,4 @@
 
-# Author: Donny
-
 from .adaboost import AdaBoostClassifier
 from .decisionstump import DecisionStumpClassifier
 

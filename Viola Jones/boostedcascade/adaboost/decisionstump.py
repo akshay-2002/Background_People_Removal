@@ -1,6 +1,4 @@
 
-# Author: Donny
-
 import math
 import time
 import sys
